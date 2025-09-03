@@ -1,0 +1,51 @@
+# Environment variables and secrets
+
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Logs
+logs/
+*.log
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Gradio specific
+gradio_cached_examples/
+
+# UV package manager
+.uv/
+
+# Local development files
+local_settings.py
+
+# Database files
+*.db
+*.sqlite3
