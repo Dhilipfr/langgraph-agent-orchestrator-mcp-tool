@@ -65,6 +65,10 @@ This project demonstrates the orchestration of multiple AI agents using LangGrap
    - Specialized agents use their tools to gather information
    - The supervisor integrates the responses into a cohesive answer
 
+## Example Output
+
+![Agent Orchestration Example Output](./images/agent_orchestration_output.png)
+
 ## Example Queries
 
 - "List out the component engagements of a specific group 'Office USA' along with the team members"
