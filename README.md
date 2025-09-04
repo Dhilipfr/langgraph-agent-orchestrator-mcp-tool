@@ -1,6 +1,6 @@
-# Agent Orchestration System
+# IT Service Management Agent Orchestration System
 
-This project implements an agent orchestration system using LangGraph and the Model Context Protocol (MCP). It coordinates specialized agents for team management and engagement information through a supervisor that delegates tasks and integrates responses.
+This project implements an AI-powered IT Service Management (ITSM) system using LangGraph and the Model Context Protocol (MCP). It coordinates specialized agents for service desk and IT staff management through an intelligent supervisor that delegates tasks and integrates responses.
 
 ## Project Structure
 
@@ -12,8 +12,8 @@ This project implements an agent orchestration system using LangGraph and the Mo
 ├── langgraph/                # LangGraph implementation
 │   └── agent_orchestration.py # Main orchestration logic
 └── mcp_servers/              # Model Context Protocol servers
-    ├── engagement_mcp.py     # MCP server for engagement information
-    └── team_management_mcp.py # MCP server for team management
+    ├── service_desk_mcp.py   # MCP server for IT service desk information
+    └── it_staff_mcp.py       # MCP server for IT staff management
 ```
 
 ## Setup Instructions
@@ -31,8 +31,25 @@ This project implements an agent orchestration system using LangGraph and the Mo
    uv sync
    ```
 
-3. **Run the application**:
+3. **Run the application** (requires three separate terminals):
+
+   Terminal 1 - Start the Service Desk MCP Server:
    ```bash
+   .venv\Scripts\activate  # Windows
+   cd mcp_servers
+   python service_desk_mcp.py
+   ```
+
+   Terminal 2 - Start the IT Staff MCP Server:
+   ```bash
+   .venv\Scripts\activate  # Windows
+   cd mcp_servers
+   python it_staff_mcp.py
+   ```
+
+   Terminal 3 - Start the Agent Orchestration application:
+   ```bash
+   .venv\Scripts\activate  # Windows
    python langgraph/agent_orchestration.py
    ```
 
@@ -50,9 +67,9 @@ This project implements an agent orchestration system using LangGraph and the Mo
 
 This project demonstrates the orchestration of multiple AI agents using LangGraph and the Model Context Protocol:
 
-1. **MCP Servers**: Two specialized MCP servers handle different domains:
-   - `engagement_mcp.py`: Provides information about client engagements and projects
-   - `team_management_mcp.py`: Manages team member information
+1. **MCP Servers**: Two specialized MCP servers handle different ITSM domains:
+   - `service_desk_mcp.py`: Provides information about IT tickets, system status, and incidents
+   - `it_staff_mcp.py`: Manages IT staff availability, specialties, and on-call rotations
 
 2. **Agent Orchestration**: The `agent_orchestration.py` file:
    - Creates specialized agents with appropriate tools from each MCP server
@@ -60,7 +77,7 @@ This project demonstrates the orchestration of multiple AI agents using LangGrap
    - Presents a Gradio UI for user interaction
 
 3. **Workflow**:
-   - User submits a query through the Gradio interface
+   - Help desk staff or managers submit queries through the Gradio interface
    - The supervisor agent breaks down the query into subtasks
    - Specialized agents use their tools to gather information
    - The supervisor integrates the responses into a cohesive answer
@@ -71,9 +88,19 @@ This project demonstrates the orchestration of multiple AI agents using LangGrap
 
 ## Example Queries
 
-- "List out the component engagements of a specific group 'Office USA' along with the team members"
-- "What team members are assigned to the Chennai engagement?"
-- "Show me all engagements in India and their respective team leads"
+- "What network specialists are available to help with the current critical network outage?"
+- "Who is on call this week and what high priority tickets need attention?"
+- "Show me the status of our email system and which staff members can address email issues"
+- "Are there any critical incidents that don't have available specialists assigned?"
+
+## Real-World Applications
+
+This system demonstrates how organizations can use AI to:
+
+1. **Accelerate Incident Response**: Quickly match available specialists to critical incidents
+2. **Improve Resource Allocation**: Identify staffing gaps for specific technical domains
+3. **Enhance Situational Awareness**: Provide holistic views of both system status and staff availability
+4. **Streamline Communication**: Reduce time spent gathering information from multiple systems
 
 ## Technologies Used
 
