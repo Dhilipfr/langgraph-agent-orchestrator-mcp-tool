@@ -167,8 +167,9 @@ def create_gradio_interface():
             examples=[
                 "What network specialists are available to help with the current critical network outage?",
                 "Who is on call this week and what high priority tickets need attention?",
-                "Show me the status of our email system and which staff members can address email issues",
-                "Are there any IT staff in the US East location who can help with database issues?"
+                "Get active tickets prioritized as critical or high.",
+                "Check the status of the VPN system.",
+                "What active tickets involve the VPN and which staff in India can help?"
             ],
             inputs=query_input,
         )
